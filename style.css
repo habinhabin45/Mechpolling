@@ -1,0 +1,53 @@
+/* SAME UI (keep as is) */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+body {
+  height:100vh;
+  background: linear-gradient(270deg,#4facfe,#8e44ad,#ff6a00);
+  background-size:600% 600%;
+  animation:bgMove 10s infinite;
+  display:flex; justify-content:center; align-items:center;
+}
+
+@keyframes bgMove {
+  0%{background-position:0%} 50%{background-position:100%} 100%{background-position:0%}
+}
+
+.app { width:100%; max-width:380px; height:90vh; display:flex; flex-direction:column; }
+.page { flex:1; display:none; justify-content:center; align-items:center; }
+.page.active { display:flex; }
+
+.card {
+  width:100%; padding:25px; border-radius:20px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.1);
+  color:white; text-align:center;
+}
+
+.glow { box-shadow:0 0 40px rgba(255,255,255,0.2); }
+
+.btn {
+  width:100%; padding:14px; margin:10px 0;
+  border-radius:12px; border:none; cursor:pointer;
+}
+
+.neon.green { background:linear-gradient(45deg,#00ff99,#00cc66); }
+.neon.red { background:linear-gradient(45deg,#ff1744,#ff9100); }
+
+.glass { background:rgba(255,255,255,0.2); color:white; }
+
+.progress { height:20px; background:rgba(255,255,255,0.2); border-radius:10px; }
+.progress div { height:100%; background:#00e5ff; }
+
+.nav {
+  display:flex; justify-content:space-around;
+  padding:10px;
+  background:rgba(255,255,255,0.1);
+  border-radius:15px;
+}
+
+.nav button {
+  font-size:22px; background:none; border:none; color:white;
+}
+
+.nav button.active { transform:scale(1.3); color:#00e5ff; }
