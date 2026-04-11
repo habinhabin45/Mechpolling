@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poll App</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- VOTE -->
+  <div id="votePage" class="page active">
+    <div class="card glow">
+      <h2>🗳 Cast Your Vote</h2>
+
+      <button class="btn neon green" onclick="vote('A')">Option A</button>
+      <button class="btn neon red" onclick="vote('B')">Option B</button>
+
+      <button class="btn glass" onclick="sharePoll()">🔗 Share Poll</button>
+
+      <p id="msg"></p>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultPage" class="page">
+    <div class="card glow">
+      <h2>📊 Results</h2>
+
+      <div class="result-box">
+        <span>Option A</span>
+        <div class="progress"><div id="barA"></div></div>
+      </div>
+
+      <div class="result-box">
+        <span>Option B</span>
+        <div class="progress"><div id="barB"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="adminPage" class="page">
+    <div class="card glow">
+
+      <div id="loginBox">
+        <input type="password" id="adminPass" placeholder="Enter password">
+        <button class="btn glass" onclick="adminLogin()">Login</button>
+      </div>
+
+      <div id="adminPanel" style="display:none;">
+        <h2>👑 Admin</h2>
+        <button class="btn glass" onclick="loadResults()">Load Results</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav">
+    <button onclick="showPage('votePage', this)" class="active">🗳</button>
+    <button id="resultTab" onclick="showPage('resultPage', this)" style="display:none;">📊</button>
+    <button onclick="showPage('adminPage', this)">⚙</button>
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
